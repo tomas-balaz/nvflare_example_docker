@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_IMAGE=monai_nvflare
+DOCKER_IMAGE=tomasbalaz/monai_nvflare
 
 # check if image exist, if not build it
 docker images |grep ${DOCKER_IMAGE}
@@ -17,9 +17,11 @@ cmd2run="bash expr_files/prepare_expr_files.sh"
 docker run \
   # --runtime nvidia \
   # --gpus all \
+  --rm
   --shm-size 1G \
-  # -v ${PWD}/:/fl_workspace/ \
+  -v ${PWD}/:/fl_workspace/ \
   -w /fl_workspace/ \
+  --name nvFlareProvision
   -it \
   ${DOCKER_IMAGE} \
   ${cmd2run}
