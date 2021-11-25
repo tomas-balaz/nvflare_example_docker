@@ -1,8 +1,11 @@
 # data
-Task09_Spleen
+*Task09_Spleen
 *.tar
 *.nii
 *.nii.gz
+
+# generated provision files
+provision_files/
 
 # virtual environments
 nvflare_monai

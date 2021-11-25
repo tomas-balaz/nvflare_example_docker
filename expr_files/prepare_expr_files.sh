@@ -1,7 +1,7 @@
 # prepare provision files
 # refer to: https://nvidia.github.io/NVFlare/user_guide/provisioning_tool.html
 DEMO_PROVISION_PATH="expr_files"
-NVFL_DOCKER_IMAGE=monai_nvflare:latest provision -n -p $DEMO_PROVISION_PATH/project.yml -o $DEMO_PROVISION_PATH
+NVFL_DOCKER_IMAGE=monai_nvflare:latest provision -n -p $DEMO_PROVISION_PATH/project.yml -o $DEMO_PROVISION_PATH/provision_files
 cd /fl_workspace/; chown -R 1000:1000 *
 
 # if you do not need to download the spleen dataset, please comment the following lines.
